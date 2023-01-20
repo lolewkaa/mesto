@@ -1,3 +1,8 @@
 .popup_opened {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  
 }
