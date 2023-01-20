@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+<body class="page">
+  <header class="header">
+    <img class="header__logo" src="images/logo.svg" alt="Логотип 'Место'">
+  </header>
+  <main>
+    <section class="profile">
+      <div class="profile__box">
+        <img class="profile__avatar" src="images/image.jpg" alt="Аватар пользователя">
+      </div>
+      <div class="profile__intro">
+        <div class="profile__container">
+          <div class="profile__holder">
+            <h1 class="profile__user">Жак-Ив Кусто</h1>
+            <button class="profile__button">
+              <img src="images/Vector.svg" alt="кнопка 'редактировать">
+            </button>
+          </div>
+          <p class="profile__text">Исследователь океана</p>
+        </div>  
+          <button class="profile__add-button ">
+            <img class="profile__add-icon" src="images/addbutton.svg" alt="Кнопка 'Добавить'">
+          </button>
+      </div>    
+    </section>
+    <section class="cards">
+      <div class="card">
+        <img class="card__img" src="images/1kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
+        <div class="card__container">
+          <p class="card__description">Карачаевск</p>
+          <button class="card__button">
+          </button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__img" src="images/2kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
+        <div class="card__container">
+          <p class="card__description">Гора Эльбрус</p>
+          <button class="card__button">
+          </button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__img" src="images/3kirill-pershin-1556355-unsplash.png" alt="Домбай">
+        <div class="card__container">
+          <p class="card__description">Домбай</p>
+          <button class="card__button">
+          </button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__img" src="images/4kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
+        <div class="card__container">
+          <p class="card__description">Гора Эльбрус</p>
+          <button class="card__button">
+          </button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__img" src="images/5kirill-pershin-1556355-unsplash.png" alt="Домбай">
+        <div class="card__container">
+          <p class="card__description">Домбай</p>
+          <button class="card__button">
+          </button>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card__img" src="images/6kirill-pershin-1088404-unsplash.png" alt="Карачаево-Черкесия">
+        <div class="card__container">
+          <p class="card__description">Карачаево-Черкесия</p>
+          <button class="card__button">
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy;2023 Mesto Russia</p>
+  </footer>
+  <div class="popup popup_opened">
+    <div class="popup__box">
+      <div class="popup__container">
+        <form class="form">
+          <button class="form__button" type="reset">
+            <img class="form__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
+          </button>
+          <h2 class="form__title">Редактировать профиль</h2>
+          <fieldset class="form__input-user">
+            <input type="text" class="form__user" value="Жак-Ив Кусто">
+          </fieldset>
+          <fieldset class="form__input-item">
+            <input type="text" class="form__item" value="Исследователь океана">
+          </fieldset>
+          <fieldset class="form__handlers">
+            <button class="form__button-save" type="submit">Сохранить</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script> 
+</body>
+</html>
