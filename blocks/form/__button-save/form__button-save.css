@@ -9,13 +9,16 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 1.2;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
   }
 
   .form__button-save:hover {
     opacity: 0.8;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 506px) {
     .form__button-save {
       max-width: 238px;
       height: 46px;

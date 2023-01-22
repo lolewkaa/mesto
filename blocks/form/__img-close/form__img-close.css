@@ -1,4 +1,11 @@
 .form__img-close {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (max-width: 506px) {
+  .form__img-close {
+    width: 20px;
+    height: 20px;
+  }
 }

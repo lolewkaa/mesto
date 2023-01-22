@@ -7,9 +7,10 @@
   column-gap: 17px;
 }
 
-@media screen and (max-width: 1024px) {
+
+@media screen and (max-width: 1279px) {
   .cards {
-    max-width: 552px;
+    
     grid-template-columns: 1fr 1fr;
     margin: 51px auto 48px auto;
   }

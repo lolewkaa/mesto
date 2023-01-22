@@ -20,13 +20,13 @@
         <div class="profile__container">
           <div class="profile__holder">
             <h1 class="profile__user">Жак-Ив Кусто</h1>
-            <button class="profile__button">
+            <button class="profile__button" type="button">
               <img src="images/Vector.svg" alt="кнопка 'редактировать">
             </button>
           </div>
           <p class="profile__text">Исследователь океана</p>
         </div>  
-          <button class="profile__add-button ">
+          <button class="profile__add-button" type="file">
             <img class="profile__add-icon" src="images/addbutton.svg" alt="Кнопка 'Добавить'">
           </button>
       </div>    
@@ -35,48 +35,48 @@
       <div class="card">
         <img class="card__img" src="images/1kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск">
         <div class="card__container">
-          <p class="card__description">Карачаевск</p>
-          <button class="card__button">
+          <h2 class="card__description">Карачаевск</h2>
+          <button class="card__button" type="button">
           </button>
         </div>
       </div>
       <div class="card">
         <img class="card__img" src="images/2kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
         <div class="card__container">
-          <p class="card__description">Гора Эльбрус</p>
-          <button class="card__button">
+          <h2 class="card__description">Гора Эльбрус</h2>
+          <button class="card__button" type="button">
           </button>
         </div>
       </div>
       <div class="card">
         <img class="card__img" src="images/3kirill-pershin-1556355-unsplash.png" alt="Домбай">
         <div class="card__container">
-          <p class="card__description">Домбай</p>
-          <button class="card__button">
+          <h2 class="card__description">Домбай</h2>
+          <button class="card__button" type="button">
           </button>
         </div>
       </div>
       <div class="card">
         <img class="card__img" src="images/4kirill-pershin-1404681-unsplash.png" alt="Гора Эльбрус">
         <div class="card__container">
-          <p class="card__description">Гора Эльбрус</p>
-          <button class="card__button">
+          <h2 class="card__description">Гора Эльбрус</h2>
+          <button class="card__button" type="button">
           </button>
         </div>
       </div>
       <div class="card">
         <img class="card__img" src="images/5kirill-pershin-1556355-unsplash.png" alt="Домбай">
         <div class="card__container">
-          <p class="card__description">Домбай</p>
-          <button class="card__button">
+          <h2 class="card__description">Домбай</h2>
+          <button class="card__button" type="button">
           </button>
         </div>
       </div>
       <div class="card">
         <img class="card__img" src="images/6kirill-pershin-1088404-unsplash.png" alt="Карачаево-Черкесия">
         <div class="card__container">
-          <p class="card__description">Карачаево-Черкесия</p>
-          <button class="card__button">
+          <h2 class="card__description">Карачаево-Черкесия</h2>
+          <button class="card__button" type="button">
           </button>
         </div>
       </div>
@@ -85,27 +85,21 @@
   <footer class="footer">
     <p class="footer__copyright">&copy;2023 Mesto Russia</p>
   </footer>
-  <div class="popup popup_opened">
-    <div class="popup__box">
+  <div class="popup">
       <div class="popup__container">
-        <form class="form">
+        <form class="form" name="profile">
           <button class="form__button" type="reset">
             <img class="form__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
           </button>
           <h2 class="form__title">Редактировать профиль</h2>
-          <fieldset class="form__input-user">
-            <input type="text" class="form__user" value="Жак-Ив Кусто">
-          </fieldset>
-          <fieldset class="form__input-item">
-            <input type="text" class="form__item" value="Исследователь океана">
-          </fieldset>
+            <input type="text" class="form__item form__item_type_name"  value="" name="name">
+            <input type="text" class="form__item form__item_type_job" value="" name="job">
           <fieldset class="form__handlers">
             <button class="form__button-save" type="submit">Сохранить</button>
           </fieldset>
         </form>
       </div>
-    </div>
   </div>
-  <script src="script.js"></script> 
+  <script src="scripts/script.js"></script> 
 </body>
 </html>
