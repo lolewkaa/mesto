@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    min-height: 200px;
+    
    min-width: 70%;
 
   }
@@ -31,5 +31,6 @@
 @media screen and (max-width: 716px) {
   .profile__intro {
     min-width: 282px;
+    
   }
 }

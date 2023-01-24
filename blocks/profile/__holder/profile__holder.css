@@ -10,5 +10,6 @@
     min-width: 217px;
     margin-bottom: 14px;
     align-items: center;
+    justify-content: center;
   }
 }

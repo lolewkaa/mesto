@@ -4,10 +4,12 @@
   
 }
 
+
+
 @media screen and (max-width: 320px) {
   .profile__box {
     max-width: 282px;
     margin: 0 53.75px 22.25px 59.5px;
-    flex-direction: column;
+    
   }
 }
