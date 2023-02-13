@@ -1,6 +1,7 @@
 .form__img-close {
   width: 32px;
   height: 32px;
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 506px) {
@@ -8,4 +9,8 @@
     width: 20px;
     height: 20px;
   }
+}
+
+.form__img-close:hover {
+  opacity: 0.8;
 }
