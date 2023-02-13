@@ -79,7 +79,7 @@ const cardList = document.querySelector('.cards');
 const cardNameInput = document.querySelector('.form__item_type_place');
 const cardLinkInput = document.querySelector('.form__item_type_link');
 const popupsImage = document.querySelector('.popup_type_image');
-const closeIconImage = document.querySelector('.form__button_type_image')
+const closeIconImage = document.querySelector('.popup__button')
 const image = document.querySelector('.popup__image')
 const imageTitle = document.querySelector('.popup__title')
 
