@@ -1,5 +1,4 @@
 const profilePopup = document.querySelector('.popup_type_user');
-const popup = document.querySelector('.popup')
 const profileButton = document.querySelector('.profile__button');
 const profileAddButton = document.querySelector('.profile__add-button');
 const newPlacePopup = document.querySelector('.popup_type_place');
@@ -32,7 +31,6 @@ function handleProfileFormSubmit (evt) {
   evt.preventDefault(); 
   author.textContent = nameInput.value;
   job.textContent = jobInput.value;
-  (evt) => {closePopup(profilePopup)}
   closePopup(profilePopup)
   
 }
@@ -78,10 +76,6 @@ const imageCloseButton = document.querySelector('.popup__button_type_image')
 const image = document.querySelector('.popup__image')
 const imageTitle = document.querySelector('.popup__title')
 
-function removeImagePopup() {
-  imagePopup.classList.remove('popup_opened');
-}
-
 const deleteCard = (evt) => {
   evt.target.closest('.card').remove()
 }
@@ -91,6 +85,7 @@ const getItemElement = (element) => {
   cardsElement.querySelector('.card__description').textContent = element.name;
   const cardImage = cardsElement.querySelector('.card__img')
   cardImage.src = element.link;
+  cardImage.alt = element.name;
   const deleteButton = cardsElement.querySelector('.card__button-delete')
   deleteButton.addEventListener('click', deleteCard)
   const likeButton = cardsElement.querySelector('.card__button');
@@ -101,6 +96,7 @@ const getItemElement = (element) => {
   cardImage.addEventListener('click', () => {openPopup(imagePopup)
   imageTitle.textContent = element.name
   image.src = element.link;
+  image.alt = element.name;
 })
   return cardsElement
 }
