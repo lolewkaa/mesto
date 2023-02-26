@@ -51,15 +51,17 @@
 
   <div class="popup popup_type_user">
     <div class="popup__container">
-      <form class="form" name="profile">
+      <form class="form form_type_profile" name="profile" novalidate>
         <button class="popup__button popup__button_type_user" type="reset">
           <img class="popup__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
         </button>
         <h2 class="form__title">Редактировать профиль</h2>
-          <input type="text" class="form__item form__item_type_name"  value="" name="name">
-          <input type="text" class="form__item form__item_type_job" value="" name="job">
+          <input id="name-input" type="text" class="form__item form__item_type_name" minlength="2" maxlength="40" value="" name="name" required>
+          <span class="form__item-error name-input-error"></span>
+          <input id="job-input" type="text" class="form__item form__item_type_job" minlength="2" maxlength="200" value="" name="job" required>
+          <span class="form__item-error job-input-error"></span>
         <fieldset class="form__handlers">
-          <button class="form__button-save" type="submit">Сохранить</button>
+          <button class="form__button-save form__submit" type="submit">Сохранить</button>
         </fieldset>
       </form>
     </div>
@@ -71,10 +73,12 @@
         <img class="popup__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
       </button>
       <h2 class="form__title">Новое место</h2>
-        <input type="text" class="form__item form__item_type_place"  value="" name="place" placeholder="Описание">
-        <input type="text" class="form__item form__item_type_link" value="" name="link" placeholder="Введите ссылку на изображение">
+        <input id="card-input" type="text" class="form__item form__item_type_place"  value="" name="place" minlength="2" maxlength="30" placeholder="Описание">
+        <span class="form__item-error card-input-error"></span>
+        <input id="link-input" type="url" class="form__item form__item_type_link" value="" name="link" placeholder="Введите ссылку на изображение">
+        <span class="form__item-error link-input-error"></span>
       <fieldset class="form__handlers">
-        <button class="form__button-save" type="submit">Создать</button>
+        <button class="form__button-save form__submit" type="submit">Создать</button>
       </fieldset>
     </form>
   </div>
@@ -88,45 +92,7 @@
     <h2 class="popup__title"></h2>
   </div>
 </div>
-  <!--<div class="popup popup_type_user">
-      <div class="popup__container">
-        <form class="form" name="profile">
-          <button class="form__button form__button_type_user" type="reset">
-            <img class="form__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
-          </button>
-          <h2 class="form__title">Редактировать профиль</h2>
-            <input type="text" class="form__item form__item_type_name"  value="" name="name">
-            <input type="text" class="form__item form__item_type_job" value="" name="job">
-          <fieldset class="form__handlers">
-            <button class="form__button-save" type="submit">Сохранить</button>
-          </fieldset>
-        </form>
-      </div>
-  </div>
-  <div class="popup popup_type_place">
-    <div class="popup__container">
-      <form class="form form_type_place" name="profile">
-        <button class="form__button form__button_type_place" type="reset">
-          <img class="form__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
-        </button>
-        <h2 class="form__title">Новое место</h2>
-          <input type="text" class="form__item form__item_type_place"  value="" name="place">
-          <input type="text" class="form__item form__item_type_link" value="" name="link">
-        <fieldset class="form__handlers">
-          <button class="form__button-save" type="submit">Создать</button>
-        </fieldset>
-      </form>
-    </div>
-</div>
-<div class="popup popup_type_image">
-  <div class="popup__container-image">
-      <button class="popup__button" type="reset">
-        <img class="popup__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
-      </button>
-      <img class="popup__image" src="#" alt="Красивое место">
-      <h2 class="popup__title"></h2>
-  </div>
-</div>-->
   <script src="scripts/script.js"></script> 
+  <script src="scripts/validate.js"></script>
 </body>
 </html>
