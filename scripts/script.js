@@ -4,13 +4,7 @@ const profileAddButton = document.querySelector('.profile__add-button');
 const newPlacePopup = document.querySelector('.popup_type_place');
 const newPlaceCloseButton = document.querySelector('.popup__button_type_place');
 const profileCloseButton = document.querySelector('.popup__button_type_user');
-const objectValidation = {
-  formSelector: '.form',
-  submitButtonSelector: '.form__submit',
-  inactiveButtonClass: 'form__submit_inactive',
-  inputSelector: '.form__item',
-  inputErrorClass: 'form__item_type_error',
-}
+
 
 const resetInput = (config) => {
   const inputList = document.querySelectorAll(config.inputSelector);
@@ -30,14 +24,14 @@ const resetButton = (config) => {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened')
-  document.addEventListener('keydown', keyHandler)
+  document.addEventListener('keydown', closeByEsc)
 }
 function closePopup(popup) {
   popup.classList.remove('popup_opened')
-  document.removeEventListener('keydown', keyHandler)
+  document.removeEventListener('keydown', closeByEsc)
 }
 
-function keyHandler(evt) {
+function closeByEsc(evt) {
   if (evt.keyCode === 27) {
     const popupOpen = document.querySelector('.popup_opened')
     closePopup(popupOpen)
@@ -71,9 +65,6 @@ profileAddButton.addEventListener('click', () => {
 newPlaceCloseButton.addEventListener('click', () => {closePopup(newPlacePopup)})
 profileCloseButton.addEventListener('click', () => {closePopup(profilePopup)})
 
-const form = document.querySelector('.form');
-const formInput = form.querySelector('.form__item')
-const formError = form.querySelector(`.${formInput.id}-error`);
 const profileForm = document.querySelector('.form_type_profile');
 const nameInput = document.querySelector('.form__item_type_name');
 const jobInput = document.querySelector('.form__item_type_job');
@@ -89,35 +80,6 @@ function handleProfileFormSubmit (evt) {
 }
 
 profileForm.addEventListener('submit', handleProfileFormSubmit);
-
-
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 
 //

@@ -35,13 +35,20 @@
     })
   }
   
+  const objectValidation = {
+    formSelector: '.form',
+    submitButtonSelector: '.form__submit',
+    inactiveButtonClass: 'form__submit_inactive',
+    inputSelector: '.form__item',
+    inputErrorClass: 'form__item_type_error',
+  }
   const enableValidation = ({formSelector, ...rest}) => {
     const formList = Array.from(document.querySelectorAll(formSelector))
   
     formList.forEach((formElement) => {
       setEventListeners(formElement, rest)
     })
-    
+    objectValidation
   }
 
   function hasInvalidInput(inputList) {
@@ -71,6 +78,5 @@
     errorClass: 'form-item-error_active'
   });
 
-
-
+ 
    

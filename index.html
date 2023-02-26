@@ -73,9 +73,9 @@
         <img class="popup__img-close" src="images/CloseIcon.svg" alt="Кнопка 'Закрыть'">
       </button>
       <h2 class="form__title">Новое место</h2>
-        <input id="card-input" type="text" class="form__item form__item_type_place"  value="" name="place" minlength="2" maxlength="30" placeholder="Описание">
+        <input id="card-input" type="text" class="form__item form__item_type_place"  value="" name="place" minlength="2" maxlength="30" placeholder="Описание" required>
         <span class="form__item-error card-input-error"></span>
-        <input id="link-input" type="url" class="form__item form__item_type_link" value="" name="link" placeholder="Введите ссылку на изображение">
+        <input id="link-input" type="url" class="form__item form__item_type_link" value="" name="link" placeholder="Введите ссылку на изображение" required>
         <span class="form__item-error link-input-error"></span>
       <fieldset class="form__handlers">
         <button class="form__button-save form__submit" type="submit">Создать</button>
@@ -92,6 +92,7 @@
     <h2 class="popup__title"></h2>
   </div>
 </div>
+  <script src="scripts/card.js"></script>
   <script src="scripts/script.js"></script> 
   <script src="scripts/validate.js"></script>
 </body>
