@@ -1,4 +1,7 @@
-
+import {Card} from './card.js'
+import { objectValidation } from './utilts.js';
+import {initialCards} from './utilts.js'
+import { FormValidator } from './validate.js';
 
 const profilePopup = document.querySelector('.popup_type_user');
 const profileButton = document.querySelector('.profile__button');
@@ -7,6 +10,10 @@ const newPlacePopup = document.querySelector('.popup_type_place');
 const newPlaceCloseButton = document.querySelector('.popup__button_type_place');
 const profileCloseButton = document.querySelector('.popup__button_type_user');
 
+  const validationProfile = new FormValidator(objectValidation, profilePopup)
+  validationProfile.enableValidation()
+  const validationPlace = new FormValidator(objectValidation, newPlacePopup)
+  validationPlace.enableValidation()
 
 const resetInput = (config) => {
   const inputList = document.querySelectorAll(config.inputSelector);
@@ -100,90 +107,38 @@ imagePopup.addEventListener("click", (evt) => {
   }
 })
 
-
-
-/*const deleteCard = (evt) => {
-  evt.target.closest('.card').remove()
-}*/
-//
-class Card {
-  constructor(data, templateSelector, handleCardClick) {
-    this._image = data.image
-    this._text = data.text
-    this._templateSelector = templateSelector
-    this._handleCardClick = handleCardClick
-  }
-  //возвращаем разметку карточки(для наполнения данными и размещения другие методы)
-  _getTemplate() {
-    const cardElement = document
-    .querySelector('#places')
-    .content
-    .querySelector('.card')
-    .cloneNode(true)
-    return cardElement
-  }
-  //добавляем данные в разметку
-  generateCard() {
-    //разметка в приватном поле element
-    this._element = this._getTemplate()
-    //Добавим данные
-    this._cardElementImage = this._element.querySelector('.card__img')
-    this._cardElementTitle = this._element.querySelector('.card__description')
-    this._likeButton = this._element.querySelector('.card__button');
-    this._deleteButton = this._element.querySelector('.card__button-delete')
-
-    this._cardElementImage.src = this._image
-    this._cardElementImage.alt = this._image
-    this._cardElementTitle.textContent = this._text
-    
-    this._setEventListeners();
-    //вернем элемент наружу
-    return this._element
-  }
-_clickLike() {
-  this._likeButton.classList.toggle('card__button_active')
-}
-
-_deleteCard() {
-  this._cardElement.remove();
-  this._cardElement = null;
-}
-
-
-_setEventListeners() {
-this._cardElementImage.addEventListener('click', () => {
-  this._handleCardClick(this._name, this._link)
-})
-this._likeButton.addEventListener('click', () => this._clickLike())
-this._deleteButton.addEventListener('click', () => this._deleteCard())
-}
-
-}
-//
-
-handleCardClick = (element) => {
+const handleCardClick = (element) => {
   openPopup(imagePopup)
-  const cardImage = cardsElement.querySelector('.card__img')
-  cardImage.src = element.link;
-  cardImage.alt = element.name;
+  image.src = element.link;
+  image.alt = element.name;
   imageTitle.textContent = element.name
 }
 
-initialCards.forEach((item) => {
+const createCard = (item) => {
   const card = new Card(item, '#places', handleCardClick)
-  const cardElement = card.generateCard()
-  cardList.append(cardElement)
+  return card.generateCard()
+}
+initialCards.forEach((item) => {
+  cardList.append(createCard(item))
 })
 
-
-/*const createCard = (cardData) => {
-  const card = new Card(cardData, '#places', handleCardClick);
-
-  return card.generateCard();
+const renderCard = (card) => {
+  cardList.prepend(createCard(card));
 };
-initialCards.forEach((cardData) => {
-  cardList.append(createCard(cardData));
-});*/
+
+const newPlaceForm = document.querySelector('.form_type_place');
+newPlaceForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  const element = {
+    name: cardNameInput.value, 
+    link: cardLinkInput.value
+  };
+  renderCard(element, cardList)
+  evt.target.reset()
+  closePopup(newPlacePopup)
+})
+
+imageCloseButton.addEventListener('click', () => {closePopup(imagePopup)})
 
 /*const getItemElement = (element) => {
   const cardsElement = newPlaceTemplate.content.cloneNode(true);
@@ -205,32 +160,10 @@ initialCards.forEach((cardData) => {
 })
   return cardsElement
 }*/
-
-imageCloseButton.addEventListener('click', () => {closePopup(imagePopup)})
-
-const renderCard = (card) => {
-  cardList.prepend(card);
-};
 /*const renderCard = (element, cardList) => {
   cardList.prepend(getItemElement(element));
 }*/
-
-const newPlaceForm = document.querySelector('.form_type_place');
-newPlaceForm.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-  const element = {
-    name: cardNameInput.value, 
-    link: cardLinkInput.value
-  };
-  renderCard(element, cardList)
-  evt.target.reset()
-  closePopup(newPlacePopup)
-})
-
 // переберём весь исходный массив
-
-
-
 /*initialCards.forEach(element => {
   renderCard(element, cardList);
 })*/

@@ -1,28 +1,55 @@
-initialCards = [
-    {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-  ];
+export class Card {
+  constructor(data, templateSelector, handleCardClick) {
+    this._link = data.link
+    this._name = data.name
+    this._templateSelector = templateSelector
+    this._handleCardClick = handleCardClick
+  }
+  //возвращаем разметку карточки(для наполнения данными и размещения другие методы)
+  _getTemplate() {
+    const cardElement = document
+    .querySelector('#places')
+    .content
+    .querySelector('.card')
+    .cloneNode(true)
+    return cardElement
+  }
+  //добавляем данные в разметку
+  generateCard() {
+    //разметка в приватном поле element
+    this._element = this._getTemplate()
+    //Добавим данные
+    this._cardElementImage = this._element.querySelector('.card__img')
+    this._cardElementTitle = this._element.querySelector('.card__description')
+    this._likeButton = this._element.querySelector('.card__button');
+    this._deleteButton = this._element.querySelector('.card__button-delete')
 
-  
+    this._cardElementImage.src = this._link
+    this._cardElementImage.alt = this._link
+    this._cardElementTitle.textContent = this._name
+    
+    this._setEventListeners();
+    //вернем элемент наружу
+    return this._element
+  }
+_clickLike() {
+  this._likeButton.classList.toggle('card__button_active')
+}
+
+_deleteCard() {
+  this._element.remove();
+  this._element = null;
+}
+
+
+_setEventListeners() {
+  this._cardElementImage.addEventListener('click', () =>
+  this._handleCardClick({
+    link: this._link,
+    name: this._name,
+  }));
+this._likeButton.addEventListener('click', () => this._clickLike())
+this._deleteButton.addEventListener('click', () => this._deleteCard())
+}
+
+}
