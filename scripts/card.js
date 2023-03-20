@@ -8,7 +8,7 @@ export class Card {
   //возвращаем разметку карточки(для наполнения данными и размещения другие методы)
   _getTemplate() {
     const cardElement = document
-    .querySelector('#places')
+    .querySelector(this._templateSelector)
     .content
     .querySelector('.card')
     .cloneNode(true)
@@ -25,7 +25,7 @@ export class Card {
     this._deleteButton = this._element.querySelector('.card__button-delete')
 
     this._cardElementImage.src = this._link
-    this._cardElementImage.alt = this._link
+    this._cardElementImage.alt = this._name
     this._cardElementTitle.textContent = this._name
     
     this._setEventListeners();
