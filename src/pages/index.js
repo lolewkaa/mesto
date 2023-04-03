@@ -17,6 +17,7 @@ import { PopupWithForm } from '../scripts/components/popupWithForm.js';
 
 import { UserInfo } from '../scripts/components/UserInfo.js';
 
+
 const profilePopup = document.querySelector('.popup_type_user');
 const profileButton = document.querySelector('.profile__button');
 const profileAddButton = document.querySelector('.profile__add-button');
@@ -75,6 +76,9 @@ const popupAddCard = new PopupWithForm(newPlacePopup, {
   }
 })
 
+
+
+
 //открыть попап имени пользователя
 profileButton.addEventListener('click', () => {
   formProfile.open()
@@ -91,11 +95,11 @@ profileButton.addEventListener('click', () => {
 //открыть попап добавления карточки
 profileAddButton.addEventListener('click', () => {
   popupAddCard.open()
+  //openPopup(newPlacePopup)
   validationPlace.resetInputs();
   validationPlace.resetButton();
 })
 
-//
 const newPlaceTemplate = document.querySelector('#places')
 const cardList = document.querySelector('.cards');
 const cardNameInput = document.querySelector('.form__item_type_place');
@@ -114,4 +118,10 @@ const cardContainer = new Section({
   )
   //добавить карточки
   cardContainer.renderItems(initialCards)
+
+popupWithImage.setEventListeners()
+formProfile.setEventListeners()
+popupAddCard.setEventListeners()
+
+
 
