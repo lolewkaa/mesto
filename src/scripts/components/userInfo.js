@@ -10,7 +10,7 @@ export class UserInfo {
       job: this._selectorJob.textContent
      }
     }
-    //принимает новые данные пользователя и добавляет их на страницу.
+    //принимает новые данные пользователя и добавляет их на страницу
     setUserInfo(element){
       this._selectorAuthor.textContent = element.name;
       this._selectorJob.textContent = element.job;
