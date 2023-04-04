@@ -1,13 +1,12 @@
 import './index.css'
 
-import {Card} from '../scripts/components/card.js'
+import {Card} from '../scripts/components/Card.js'
 
 import { objectValidation } from '../scripts/utilts/utilts.js';
 
 import {initialCards} from '../scripts/utilts/utilts.js'
 
 import { FormValidator } from '../scripts/components/FormValidator.js';
-
 
 import { Section } from '../scripts/components/Section.js';
 
@@ -16,7 +15,6 @@ import { PopupWithImage } from '../scripts/components/PopupWithImage.js';
 import { PopupWithForm } from '../scripts/components/popupWithForm.js';
 
 import { UserInfo } from '../scripts/components/UserInfo.js';
-
 
 const profilePopup = document.querySelector('.popup_type_user');
 const profileButton = document.querySelector('.profile__button');
@@ -47,8 +45,8 @@ const popupWithImage = new PopupWithImage(imagePopup)
 
 //форма профиля с данными пользователя
 const userInfo = new UserInfo({
-  selectorAuthor: '.profile__user',
-  selectorJob: '.profile__text'
+  userName: '.profile__user',
+  userJob: '.profile__text'
 })
 //создаем карточку
 const createCard = (item) => {
@@ -67,17 +65,14 @@ const formProfile = new PopupWithForm(profilePopup, {
 
 //добавляет новую карточку
 const popupAddCard = new PopupWithForm(newPlacePopup, {
-  handleFormSubmit: ({link}) => {
+  handleFormSubmit: ({place, link}) => {
     cardContainer.addItem(createCard({
-      name: cardNameInput.value,
+      name: place,
       link: link,
-      alt: cardNameInput.value,
+      alt: place
     }))
   }
 })
-
-
-
 
 //открыть попап имени пользователя
 profileButton.addEventListener('click', () => {
@@ -90,8 +85,8 @@ profileButton.addEventListener('click', () => {
   formProfile.showInputValues(userInfo.getUserInfo())
  validationProfile.resetInputs();
  validationProfile.resetButton();
- 
 })
+
 //открыть попап добавления карточки
 profileAddButton.addEventListener('click', () => {
   popupAddCard.open()
@@ -112,7 +107,6 @@ const imageTitle = document.querySelector('.popup__title')
 const cardContainer = new Section({
   renderer: (card) => {
     cardContainer.addItem(createCard(card));
-  
   },
 }, '.cards'
   )
