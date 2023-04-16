@@ -15,6 +15,7 @@
     <section class="profile">
       <div class="profile__box">
         <img class="profile__avatar" src="<%=require('./images/image.jpg')%>"  alt="Аватар пользователя">
+        <img class="profile__avatar-change" src="<%=require('./images/Vector.svg')%>" alt="кнопка 'Редактировать аватар'">
       </div>
       <div class="profile__intro">
         <div class="profile__container">
@@ -39,7 +40,10 @@
           <img class="card__img" alt="Фотография пользователя">
           <div class="card__container">
             <h2 class="card__description"></h2>
+            <div class="card__box">
             <button class="card__button" type="button"></button>
+            <h2 class="card__page-lakes">6</h2>
+          </div>
           </div>
         </div>
     </template>
@@ -58,7 +62,7 @@
         <h2 class="form__title">Редактировать профиль</h2>
           <input id="name-input" type="text" class="form__item form__item_type_name" minlength="2" maxlength="40" value="" name="name" required placeholder="Введите ваше имя">
           <span class="form__item-error name-input-error"></span>
-          <input id="job-input" type="text" class="form__item form__item_type_job" minlength="2" maxlength="200" value="" name="job" required placeholder="Расскажите, чем занимаетесь">
+          <input id="job-input" type="text" class="form__item form__item_type_job" minlength="2" maxlength="200" value="" name="about" required placeholder="Расскажите, чем занимаетесь">
           <span class="form__item-error job-input-error"></span>
         <fieldset class="form__handlers">
           <button class="form__button-save form__submit" type="submit">Сохранить</button>
@@ -90,6 +94,34 @@
     </button>
     <img class="popup__image" src="#" alt="Фотография пользователя">
     <h2 class="popup__title"></h2>
+  </div>
+</div>
+
+<div class="popup popup_type_delete">
+  <div class="popup__container">
+      <button class="popup__button popup__button_type_delete" type="reset">
+        <img class="popup__img-close" src="<%=require('./images/CloseIcon.svg')%>"  alt="Кнопка 'Закрыть'">
+      </button>
+      <h2 class="form__title">Вы уверены?</h2>
+      <fieldset class="form__handlers">
+        <button class="form__button-save form__submit" type="submit">Да</button>
+      </fieldset>
+  </div>
+</div>
+
+<div class="popup popup_type_avatar">
+  <div class="popup__container">
+    <form class="form form_type_avatar" name="avatar">
+      <button class="popup__button popup__button_type_avatar" type="reset">
+        <img class="popup__img-close" src="<%=require('./images/CloseIcon.svg')%>"  alt="Кнопка 'Закрыть'">
+      </button>
+      <h2 class="form__title">Обновить аватар</h2>
+        <input id="card-input" type="text" class="form__item form__item_type_avatar"  value="" name="avatar" minlength="2" maxlength="30" placeholder="Описание" required>
+        <span class="form__item-error card-input-error"></span>
+      <fieldset class="form__handlers">
+        <button class="form__button-save form__submit" type="submit">Сохранить</button>
+      </fieldset>
+    </form>
   </div>
 </div>
   <!--<script type="module" src="./index.js"></script>-->

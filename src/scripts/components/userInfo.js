@@ -7,13 +7,13 @@ export class UserInfo {
     getUserInfo(){
      return {
       name: this._userName.textContent,
-      job: this._userJob.textContent
+      about: this._userJob.textContent
      }
     }
     //принимает новые данные пользователя и добавляет их на страницу
     setUserInfo(element){
       this._userName.textContent = element.name;
-      this._userJob.textContent = element.job;
+      this._userJob.textContent = element.about;
     }
   }
  

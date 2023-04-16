@@ -1,9 +1,11 @@
 export class Card {
-  constructor(data, templateSelector, handleCardClick) {
+  constructor(data, templateSelector, handleCardClick, handleLikeClick, handleDeleteIconClick) {
     this._link = data.link
     this._name = data.name
     this._templateSelector = templateSelector
     this._handleCardClick = handleCardClick
+    this._handleLikeClick = handleLikeClick
+    this._handleDeleteIconClick = handleDeleteIconClick
   }
   //возвращаем разметку карточки(для наполнения данными и размещения другие методы)
   _getTemplate() {
@@ -48,6 +50,7 @@ _setEventListeners() {
     link: this._link,
     name: this._name,
   }));
+  
 this._likeButton.addEventListener('click', () => this._clickLike())
 this._deleteButton.addEventListener('click', () => this._deleteCard())
 }

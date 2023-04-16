@@ -1,7 +1,7 @@
 .profile__box {
   min-width: 145.5px;
   margin-right: 3.75px;
-  
+  position: relative;
 }
 
 
