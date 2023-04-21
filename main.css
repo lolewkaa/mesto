@@ -4,8 +4,10 @@
 .header{border-bottom:1px solid rgba(84,84,84,.7);margin:45px 200px 0;max-width:880px}@media screen and (max-width:769px){.header{margin:45px auto 0;max-width:90%}}@media screen and (max-width:338px){.header{margin:28px 0 38.25px;max-width:320px}}
 .header__logo{margin:0 0 41px;max-width:142px;padding:0}@media screen and (max-width:338px){.header__logo{margin:0 0 31px 27px;max-width:103px}}
 .profile{display:flex;justify-content:space-between;margin:40px 200px 0;max-width:880px}@media screen and (max-width:895px){.profile{align-items:center;flex-direction:column;margin:40px auto 36px;max-width:552px}}
-.profile__box{margin-right:3.75px;min-width:145.5px}@media screen and (max-width:320px){.profile__box{margin:0 53.75px 22.25px 59.5px;max-width:282px}}
-.profile__avatar{border-radius:50%;height:120px;max-width:120px}@media screen and (max-width:895px){.profile__avatar{margin:3.75px 72.75px}}@media screen and (max-width:320px){.profile__avatar{margin:3.75px 26.25px 3.75px 22.5px}}
+.profile__box{margin-right:3.75px;min-width:145.5px;position:relative}@media screen and (max-width:320px){.profile__box{margin:0 53.75px 22.25px 59.5px;max-width:282px}}
+.profile__avatar{border-radius:50%;cursor:pointer;height:120px;max-width:120px;transition:.5s}.profile__avatar:hover{opacity:.2}@media screen and (max-width:895px){.profile__avatar{margin:3.75px 72.75px}}@media screen and (max-width:320px){.profile__avatar{margin:3.75px 26.25px 3.75px 22.5px}}
+.profile__avatar-change{bottom:47px;cursor:pointer;display:none;height:26px;left:47px;position:absolute;width:26px;z-index:1}
+.profile__avatar-change_opened{display:block}
 .profile__intro{align-items:center;display:flex;justify-content:space-between;min-width:80%}@media screen and (max-width:1145px){.profile__intro{align-items:flex-start;flex-direction:column;justify-content:space-between;min-width:70%}}@media screen and (max-width:895px){.profile__intro{align-items:center}}@media screen and (max-width:826px){.profile__intro{min-width:350px}}@media screen and (max-width:716px){.profile__intro{min-width:282px}}
 .profile__container{display:flex;flex-direction:column;justify-content:space-between}@media screen and (max-width:1145px){.profile__container{margin-bottom:36px}}@media screen and (max-width:320px){.profile__container{max-width:282px}}
 .profile__holder{align-items:flex-end;display:flex;justify-content:space-between;min-width:336px}@media screen and (max-width:346px){.profile__holder{align-items:center;justify-content:center;margin-bottom:14px;min-width:217px}}
@@ -33,7 +35,9 @@
 .card__img{border-top-left-radius:10px;border-top-right-radius:10px;cursor:pointer;display:block;height:282px;width:282px}
 .card__container{align-items:flex-end;background-color:#fff;display:flex;justify-content:space-between;margin:25px 15px 31px 21px;max-width:246px}
 .card__description{font-size:24px;font-weight:900;line-height:1.2;margin:0;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:nowrap}
+.card__box{align-items:center;display:flex;flex-direction:column}
 .card__button{background-color:transparent;background-image:url(1ad06e85f169668a1f36.svg);background-position:50%;background-repeat:no-repeat;border:none;cursor:pointer;min-height:19px;min-width:22px;padding:0;transition:.5s}.card__button:hover{opacity:.5}
+.card__page-lakes{font-size:13px;font-weight:400;line-height:1.2;margin:3px 0 0;padding:0}
 .card__button_active{background-image:url(35948469632d0421d697.svg)}
 .footer{margin:67px 200px 60px;max-width:880px}@media screen and (max-width:1075px){.footer{margin:67px 150px 60px}}@media screen and (max-width:983px){.footer{margin:67px 100px 60px}}@media screen and (max-width:450px){.footer{margin:0 19px 36px;max-width:282px}}
 .footer__copyright{color:#545454;font-size:18px;font-weight:400;line-height:1.2;margin:0;padding:0}@media screen and (max-width:1075px){.footer__copyright{font-size:14px}}
@@ -46,3 +50,5 @@
 .popup__img-close{height:32px;transition:.5s;width:32px}@media screen and (max-width:506px){.popup__img-close{height:20px;width:20px}}.popup__img-close:hover{opacity:.8}
 .popup_type_image{background-color:red;background-color:rgba(0,0,0,.9)}
 
+
+/*# sourceMappingURL=main.css.map*/
