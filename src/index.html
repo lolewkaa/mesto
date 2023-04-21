@@ -14,8 +14,8 @@
   <main>
     <section class="profile">
       <div class="profile__box">
-        <img class="profile__avatar" src="<%=require('./images/image.jpg')%>"  alt="Аватар пользователя">
-        <img class="profile__avatar-change" src="<%=require('./images/Vector.svg')%>" alt="кнопка 'Редактировать аватар'">
+        <img name='avatar' class="profile__avatar" src="<%=require('./images/image.jpg')%>"  alt="Аватар пользователя">
+        <img class="profile__avatar-change " src="<%=require('./images/Vector.svg')%>" alt="кнопка 'Редактировать аватар'">
       </div>
       <div class="profile__intro">
         <div class="profile__container">
@@ -42,7 +42,7 @@
             <h2 class="card__description"></h2>
             <div class="card__box">
             <button class="card__button" type="button"></button>
-            <h2 class="card__page-lakes">6</h2>
+            <h2 class="card__page-lakes"></h2>
           </div>
           </div>
         </div>
@@ -116,8 +116,8 @@
         <img class="popup__img-close" src="<%=require('./images/CloseIcon.svg')%>"  alt="Кнопка 'Закрыть'">
       </button>
       <h2 class="form__title">Обновить аватар</h2>
-        <input id="card-input" type="text" class="form__item form__item_type_avatar"  value="" name="avatar" minlength="2" maxlength="30" placeholder="Описание" required>
-        <span class="form__item-error card-input-error"></span>
+        <input id="avatar-input" type="url" class="form__item form__item_type_avatar"  value="" name="avatar"  placeholder="Ссылка на аватар" required>
+        <span class="form__item-error avatar-input-error"></span>
       <fieldset class="form__handlers">
         <button class="form__button-save form__submit" type="submit">Сохранить</button>
       </fieldset>

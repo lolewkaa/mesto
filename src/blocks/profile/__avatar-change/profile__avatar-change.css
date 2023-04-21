@@ -5,4 +5,5 @@
     bottom: 47px;
   left: 47px;
   position: absolute;
+  visibility: hidden;
 }
