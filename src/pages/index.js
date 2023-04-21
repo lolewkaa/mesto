@@ -4,8 +4,6 @@ import {Card} from '../scripts/components/Card.js'
 
 import { objectValidation } from '../scripts/utilts/utilts.js';
 
-//import {initialCards} from '../scripts/utilts/utilts.js'
-
 import { FormValidator } from '../scripts/components/FormValidator.js';
 
 import { Section } from '../scripts/components/Section.js';
@@ -39,9 +37,6 @@ const deletePopup = document.querySelector('.popup_type_delete')
 const deleteButton = document.querySelector('.card__button-delete')
 const pencyl = document.querySelector('.profile__avatar-change')
 
-
-
-
   const validationProfile = new FormValidator(objectValidation, profilePopup)
   validationProfile.enableValidation()
   const validationPlace = new FormValidator(objectValidation, newPlacePopup)
@@ -65,18 +60,8 @@ const pencyl = document.querySelector('.profile__avatar-change')
     }
   })
 
-//const popupProfile = new Popup(profilePopup)
-//const popupPlace = new Popup(newPlacePopup)
 const popupWithImage = new PopupWithImage(imagePopup)
 
-
-
-  // deleteButton.addEventListener('click', () => {
-  //   popupWithSubmit.open()
-    
-  // })
-//popupProfile.setEventListeners()
-//popupPlace.setEventListeners()
 
 //форма профиля с данными пользователя
 const userInfo = new UserInfo({
@@ -84,13 +69,6 @@ const userInfo = new UserInfo({
   userJob: '.profile__text', 
   userAvatar: '.profile__avatar'
 })
-//создаем карточку
-// const createCard = (item) => {
-//   const card = new Card(item, '#places', () => {
-//     popupWithImage.open(item)
-//   })
-//   return card.generateCard()
-// }
 
 
 const createCard = (data, user) => {
@@ -159,43 +137,21 @@ const formAvatar = new PopupWithForm(avatarPopup, {
   }
 })
 
+
+avatarBatton.onmouseover = function() {
+  pencyl.classList.add('profile__avatar-change_opened')
+}
+avatarBatton.onmouseout = function() {
+  pencyl.classList.remove('profile__avatar-change_opened')
+}
+
+
 avatarBatton.addEventListener('click', () => {
   formAvatar.open()
-  pencyl.classList.add('profile__avatar-change_opened')
+  
   validationAvatar.resetInputs();
   validationAvatar.resetButton();
 })
-
-
-
-
-  // function renderCard ({place, link}) {
-  //       cardContainer.addItem(createCard({
-  //         name: place,
-  //         link: link,
-  //         alt: place
-  //       }))
-  //     }
-//добавляет новую карточку
-// const popupAddCard = new PopupWithForm(newPlacePopup, {
-//   handleFormSubmit: ({place, link}) => {
-//     cardContainer.addItem(createCard({
-//       name: place,
-//       link: link,
-//       alt: place
-//     }))
-//   }
-// })
-
-// const popupAddCard = new PopupWithForm(newPlacePopup, {
-//   handleFormSubmit: (data) => {
-//     api.postNewCard(data)
-//     .then((res) =>{
-     
-//       cardContainer.addItem(createCard(res, userId))
-    
-//   })
-// }})
 
 const popupAddCard = new PopupWithForm(newPlacePopup, {
   handleFormSubmit: (data) => {
@@ -218,9 +174,6 @@ const popupAddCard = new PopupWithForm(newPlacePopup, {
 //открыть попап имени пользователя
 profileButton.addEventListener('click', () => {
   formProfile.open()
-  //openPopup(profilePopup)
-  //nameInput.value = author.textContent;
-  //jobInput.value = job.textContent;
 
   //возвращаем объект с данными пользователя
   formProfile.showInputValues(userInfo.getUserInfo())
@@ -244,17 +197,6 @@ const imageCloseButton = document.querySelector('.popup__button_type_image')
 const image = document.querySelector('.popup__image')
 const imageTitle = document.querySelector('.popup__title')
 
-//создать секцию
-// const cardContainer = new Section({
-//   renderer: (card) => {
-//     cardContainer.addItem(createCard(card));
-//   },
-// }, '.cards'
-//   )
-//   //добавить карточки
-//   cardContainer.renderItems(initialCards)
-  
-
   ////
   const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-64',
@@ -269,41 +211,11 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
 .then(([dataUser, resCard]) => {
   userId = dataUser._id
   userInfo.setUserInfo(dataUser)
-  cardContainer.renderItems(resCard, dataUser)
+  userInfo.setUserAvatar(dataUser)
+  cardContainer.renderItems(resCard, userId)
 }).catch((error) => 
   console.log(`Ошибка: ${error}`)
   )
-
-
-//  //достаем данные о пользователе и устанавливаем их в нужных полях
-//   api.getUserInfo().then((dataUser) => {
-//     userInfo.setUserInfo(dataUser)
-//     userId = dataUser._id
-    
-//   }).catch((error) => 
-//   console.log(`Ошибка: ${error}`)
-//   )
-  
-
-//   //подгружаем начальные карточки с сервера
-//   api.getInitialCards().then((result, dataUser) => {
-//       //добавить карточки
-//       userId = dataUser._id
-//       cardContainer.renderItems(result, dataUser)
-//   })
-//   .catch((err) => {
-//        console.log(err); // выведем ошибку в консоль
-//      });
-
- 
-  
- //добавить новую карточку
-  // api.postNewCard().then((res) =>{
-    
-  //   console.log(res)
-   
-  
-  // })
   
 
 popupWithImage.setEventListeners()

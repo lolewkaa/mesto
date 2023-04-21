@@ -9,5 +9,5 @@
   3. Медиазапросы;
   4. JavaScript.  
     
-[Ссылка на проект](https://lolewkaa.github.io/mesto/index.html)
+[Ссылка на проект](https://lolewkaa.github.io/mesto)
 

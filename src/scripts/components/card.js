@@ -72,12 +72,6 @@ showLikes(card){
   }
 }
 
-// clickLike() {
-//   if (this.cardLike()){
-//   this._likeButton.classList.toggle('card__button_active')
-//   }
-// }
-
 clickLike() {
   if (this.cardLike()){
   this._handleDeleteLikeClick(this.idCard)
