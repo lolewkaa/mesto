@@ -12,13 +12,18 @@ export class UserInfo {
      }
     }
     //принимает новые данные пользователя и добавляет их на страницу
+    
     setUserInfo(element){
+      if (element.name, element.about) {
       this._userName.textContent = element.name;
       this._userJob.textContent = element.about;
+      }
     }
-
+  
     setUserAvatar(data) {
+     if (data.avatar) {
       this._userAvatar.src = data.avatar
+    }
     }
   }
  
