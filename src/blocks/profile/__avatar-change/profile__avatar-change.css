@@ -6,5 +6,6 @@
   left: 47px;
   position: absolute;
  display: none;
- cursor: pointer;
+ pointer-events: none;
+
 }
